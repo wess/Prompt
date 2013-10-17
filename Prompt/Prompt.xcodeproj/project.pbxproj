@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7CC79C3180F6E2900498C07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79C2180F6E2900498C07 /* Cocoa.framework */; };
+		D7CC79CD180F6E2A00498C07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7CC79CB180F6E2A00498C07 /* InfoPlist.strings */; };
+		D7CC79D8180F6E2A00498C07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79D7180F6E2A00498C07 /* XCTest.framework */; };
+		D7CC79D9180F6E2A00498C07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79C2180F6E2900498C07 /* Cocoa.framework */; };
+		D7CC79DC180F6E2A00498C07 /* Prompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79BF180F6E2900498C07 /* Prompt.framework */; };
+		D7CC79E2180F6E2A00498C07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7CC79E0180F6E2A00498C07 /* InfoPlist.strings */; };
+		D7CC79E4180F6E2A00498C07 /* PromptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC79E3180F6E2A00498C07 /* PromptTests.m */; };
+		D7CC7A09180F705800498C07 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79C7180F6E2900498C07 /* AppKit.framework */; };
+		D7CC7A38180F72D500498C07 /* Prompt.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CC7A36180F72D500498C07 /* Prompt.h */; };
+		D7CC7A39180F72D500498C07 /* Prompt.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A37180F72D500498C07 /* Prompt.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7CC79DA180F6E2A00498C07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7CC79B6180F6E2900498C07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CC79BE180F6E2900498C07;
+			remoteInfo = Prompt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D7CC79BF180F6E2900498C07 /* Prompt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prompt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CC79C2180F6E2900498C07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D7CC79C5180F6E2900498C07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7CC79C6180F6E2900498C07 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D7CC79C7180F6E2900498C07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D7CC79CA180F6E2900498C07 /* Prompt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Prompt-Info.plist"; sourceTree = "<group>"; };
+		D7CC79CC180F6E2A00498C07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7CC79CE180F6E2A00498C07 /* Prompt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prompt-Prefix.pch"; sourceTree = "<group>"; };
+		D7CC79D6180F6E2A00498C07 /* PromptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CC79D7180F6E2A00498C07 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D7CC79DF180F6E2A00498C07 /* PromptTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PromptTests-Info.plist"; sourceTree = "<group>"; };
+		D7CC79E1180F6E2A00498C07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7CC79E3180F6E2A00498C07 /* PromptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromptTests.m; sourceTree = "<group>"; };
+		D7CC7A36180F72D500498C07 /* Prompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prompt.h; sourceTree = "<group>"; };
+		D7CC7A37180F72D500498C07 /* Prompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prompt.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7CC79BB180F6E2900498C07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC7A09180F705800498C07 /* AppKit.framework in Frameworks */,
+				D7CC79C3180F6E2900498C07 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CC79D3180F6E2A00498C07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC79D9180F6E2A00498C07 /* Cocoa.framework in Frameworks */,
+				D7CC79D8180F6E2A00498C07 /* XCTest.framework in Frameworks */,
+				D7CC79DC180F6E2A00498C07 /* Prompt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7CC79B5180F6E2900498C07 = {
+			isa = PBXGroup;
+			children = (
+				D7CC79C8180F6E2900498C07 /* Prompt */,
+				D7CC79DD180F6E2A00498C07 /* PromptTests */,
+				D7CC79C1180F6E2900498C07 /* Frameworks */,
+				D7CC79C0180F6E2900498C07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7CC79C0180F6E2900498C07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79BF180F6E2900498C07 /* Prompt.framework */,
+				D7CC79D6180F6E2A00498C07 /* PromptTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7CC79C1180F6E2900498C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79C2180F6E2900498C07 /* Cocoa.framework */,
+				D7CC79D7180F6E2A00498C07 /* XCTest.framework */,
+				D7CC79C4180F6E2900498C07 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7CC79C4180F6E2900498C07 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79C5180F6E2900498C07 /* Foundation.framework */,
+				D7CC79C6180F6E2900498C07 /* CoreData.framework */,
+				D7CC79C7180F6E2900498C07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D7CC79C8180F6E2900498C07 /* Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79C9180F6E2900498C07 /* Supporting Files */,
+				D7CC7A36180F72D500498C07 /* Prompt.h */,
+				D7CC7A37180F72D500498C07 /* Prompt.m */,
+			);
+			path = Prompt;
+			sourceTree = "<group>";
+		};
+		D7CC79C9180F6E2900498C07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79CA180F6E2900498C07 /* Prompt-Info.plist */,
+				D7CC79CB180F6E2A00498C07 /* InfoPlist.strings */,
+				D7CC79CE180F6E2A00498C07 /* Prompt-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7CC79DD180F6E2A00498C07 /* PromptTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79E3180F6E2A00498C07 /* PromptTests.m */,
+				D7CC79DE180F6E2A00498C07 /* Supporting Files */,
+			);
+			path = PromptTests;
+			sourceTree = "<group>";
+		};
+		D7CC79DE180F6E2A00498C07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC79DF180F6E2A00498C07 /* PromptTests-Info.plist */,
+				D7CC79E0180F6E2A00498C07 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D7CC79BC180F6E2900498C07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC7A38180F72D500498C07 /* Prompt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D7CC79BE180F6E2900498C07 /* Prompt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CC79E7180F6E2A00498C07 /* Build configuration list for PBXNativeTarget "Prompt" */;
+			buildPhases = (
+				D7CC79BA180F6E2900498C07 /* Sources */,
+				D7CC79BB180F6E2900498C07 /* Frameworks */,
+				D7CC79BC180F6E2900498C07 /* Headers */,
+				D7CC79BD180F6E2900498C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Prompt;
+			productName = Prompt;
+			productReference = D7CC79BF180F6E2900498C07 /* Prompt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D7CC79D5180F6E2A00498C07 /* PromptTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CC79EA180F6E2A00498C07 /* Build configuration list for PBXNativeTarget "PromptTests" */;
+			buildPhases = (
+				D7CC79D2180F6E2A00498C07 /* Sources */,
+				D7CC79D3180F6E2A00498C07 /* Frameworks */,
+				D7CC79D4180F6E2A00498C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7CC79DB180F6E2A00498C07 /* PBXTargetDependency */,
+			);
+			name = PromptTests;
+			productName = PromptTests;
+			productReference = D7CC79D6180F6E2A00498C07 /* PromptTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7CC79B6180F6E2900498C07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Nudge;
+				TargetAttributes = {
+					D7CC79D5180F6E2A00498C07 = {
+						TestTargetID = D7CC79BE180F6E2900498C07;
+					};
+				};
+			};
+			buildConfigurationList = D7CC79B9180F6E2900498C07 /* Build configuration list for PBXProject "Prompt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D7CC79B5180F6E2900498C07;
+			productRefGroup = D7CC79C0180F6E2900498C07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7CC79BE180F6E2900498C07 /* Prompt */,
+				D7CC79D5180F6E2A00498C07 /* PromptTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7CC79BD180F6E2900498C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC79CD180F6E2A00498C07 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CC79D4180F6E2A00498C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC79E2180F6E2A00498C07 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7CC79BA180F6E2900498C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC7A39180F72D500498C07 /* Prompt.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CC79D2180F6E2A00498C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CC79E4180F6E2A00498C07 /* PromptTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7CC79DB180F6E2A00498C07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7CC79BE180F6E2900498C07 /* Prompt */;
+			targetProxy = D7CC79DA180F6E2A00498C07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7CC79CB180F6E2A00498C07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CC79CC180F6E2A00498C07 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D7CC79E0180F6E2A00498C07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CC79E1180F6E2A00498C07 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7CC79E5180F6E2A00498C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D7CC79E6180F6E2A00498C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D7CC79E8180F6E2A00498C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prompt/Prompt-Prefix.pch";
+				INFOPLIST_FILE = "Prompt/Prompt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		D7CC79E9180F6E2A00498C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prompt/Prompt-Prefix.pch";
+				INFOPLIST_FILE = "Prompt/Prompt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		D7CC79EB180F6E2A00498C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Prompt.framework/Versions/A/Prompt";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prompt/Prompt-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PromptTests/PromptTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D7CC79EC180F6E2A00498C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Prompt.framework/Versions/A/Prompt";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Prompt/Prompt-Prefix.pch";
+				INFOPLIST_FILE = "PromptTests/PromptTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7CC79B9180F6E2900498C07 /* Build configuration list for PBXProject "Prompt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CC79E5180F6E2A00498C07 /* Debug */,
+				D7CC79E6180F6E2A00498C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7CC79E7180F6E2A00498C07 /* Build configuration list for PBXNativeTarget "Prompt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CC79E8180F6E2A00498C07 /* Debug */,
+				D7CC79E9180F6E2A00498C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7CC79EA180F6E2A00498C07 /* Build configuration list for PBXNativeTarget "PromptTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CC79EB180F6E2A00498C07 /* Debug */,
+				D7CC79EC180F6E2A00498C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7CC79B6180F6E2900498C07 /* Project object */;
+}
