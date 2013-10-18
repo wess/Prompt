@@ -15,7 +15,10 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool
     {
-        return PromptApplicationMain(argc, argv, nil, NSStringFromClass([PromptExampleAppDelegate class]));
+        parseCommandlineArguments(^(NSDictionary *args) {
+            NSLog(@"args: %@", args);
+        });
+        return 0; //PromptApplicationMain(argc, argv, nil, NSStringFromClass([PromptExampleAppDelegate class]));
     }
 
 }

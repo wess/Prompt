@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7AD98A5181031CC004B5A71 /* PromptDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D7AD98A3181031CC004B5A71 /* PromptDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7AD98AA18103810004B5A71 /* PromptOption.h in Headers */ = {isa = PBXBuildFile; fileRef = D7AD98A818103810004B5A71 /* PromptOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7AD98AB18103810004B5A71 /* PromptOption.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AD98A918103810004B5A71 /* PromptOption.m */; };
+		D7AD98AF18103F20004B5A71 /* PromptParser.h in Headers */ = {isa = PBXBuildFile; fileRef = D7AD98AD18103F20004B5A71 /* PromptParser.h */; };
+		D7AD98B018103F20004B5A71 /* PromptParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AD98AE18103F20004B5A71 /* PromptParser.m */; };
 		D7CC79C3180F6E2900498C07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79C2180F6E2900498C07 /* Cocoa.framework */; };
 		D7CC79CD180F6E2A00498C07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7CC79CB180F6E2A00498C07 /* InfoPlist.strings */; };
 		D7CC79D8180F6E2A00498C07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79D7180F6E2A00498C07 /* XCTest.framework */; };
@@ -15,7 +20,7 @@
 		D7CC79E2180F6E2A00498C07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7CC79E0180F6E2A00498C07 /* InfoPlist.strings */; };
 		D7CC79E4180F6E2A00498C07 /* PromptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC79E3180F6E2A00498C07 /* PromptTests.m */; };
 		D7CC7A09180F705800498C07 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC79C7180F6E2900498C07 /* AppKit.framework */; };
-		D7CC7A38180F72D500498C07 /* Prompt.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CC7A36180F72D500498C07 /* Prompt.h */; };
+		D7CC7A38180F72D500498C07 /* Prompt.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CC7A36180F72D500498C07 /* Prompt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7CC7A39180F72D500498C07 /* Prompt.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A37180F72D500498C07 /* Prompt.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7AD98A3181031CC004B5A71 /* PromptDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptDelegate.h; sourceTree = "<group>"; };
+		D7AD98A818103810004B5A71 /* PromptOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptOption.h; sourceTree = "<group>"; };
+		D7AD98A918103810004B5A71 /* PromptOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptOption.m; sourceTree = "<group>"; };
+		D7AD98AD18103F20004B5A71 /* PromptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptParser.h; sourceTree = "<group>"; };
+		D7AD98AE18103F20004B5A71 /* PromptParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptParser.m; sourceTree = "<group>"; };
 		D7CC79BF180F6E2900498C07 /* Prompt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prompt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CC79C2180F6E2900498C07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D7CC79C5180F6E2900498C07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7AD98A718103800004B5A71 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				D7AD98A818103810004B5A71 /* PromptOption.h */,
+				D7AD98A918103810004B5A71 /* PromptOption.m */,
+			);
+			name = Option;
+			sourceTree = "<group>";
+		};
+		D7AD98AC18103F16004B5A71 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				D7AD98AD18103F20004B5A71 /* PromptParser.h */,
+				D7AD98AE18103F20004B5A71 /* PromptParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		D7CC79B5180F6E2900498C07 = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +140,12 @@
 		D7CC79C8180F6E2900498C07 /* Prompt */ = {
 			isa = PBXGroup;
 			children = (
-				D7CC79C9180F6E2900498C07 /* Supporting Files */,
+				D7AD98AC18103F16004B5A71 /* Parser */,
+				D7AD98A718103800004B5A71 /* Option */,
+				D7AD98A3181031CC004B5A71 /* PromptDelegate.h */,
 				D7CC7A36180F72D500498C07 /* Prompt.h */,
 				D7CC7A37180F72D500498C07 /* Prompt.m */,
+				D7CC79C9180F6E2900498C07 /* Supporting Files */,
 			);
 			path = Prompt;
 			sourceTree = "<group>";
@@ -155,6 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7CC7A38180F72D500498C07 /* Prompt.h in Headers */,
+				D7AD98A5181031CC004B5A71 /* PromptDelegate.h in Headers */,
+				D7AD98AA18103810004B5A71 /* PromptOption.h in Headers */,
+				D7AD98AF18103F20004B5A71 /* PromptParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7AD98AB18103810004B5A71 /* PromptOption.m in Sources */,
+				D7AD98B018103F20004B5A71 /* PromptParser.m in Sources */,
 				D7CC7A39180F72D500498C07 /* Prompt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +488,7 @@
 				D7CC79E9180F6E2A00498C07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7CC79EA180F6E2A00498C07 /* Build configuration list for PBXNativeTarget "PromptTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +497,7 @@
 				D7CC79EC180F6E2A00498C07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
