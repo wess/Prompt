@@ -79,7 +79,8 @@
         }
         else
         {
-            id val = vals.count > idx? vals[idx] : @"";
+            id val = vals.count > idx? [vals objectAtIndex:idx] : @"";
+
             [mutableArgs setObject:@[val] forKey:key];
         }
     }];
