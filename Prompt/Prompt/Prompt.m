@@ -79,7 +79,8 @@
         }
         else
         {
-            [mutableArgs setObject:@[vals[idx]] forKey:key];
+            id val = vals.count > idx? [vals objectAtIndex:idx] : @"";
+            [mutableArgs setObject:@[val] forKey:key];
         }
     }];
     
