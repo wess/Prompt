@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^PromptHandler)(NSArray *arguments, NSArray *environmentVariables);
+typedef void(^PromptHandler)(NSArray *arguments);
 
 @interface PromptOption : NSObject
 @property (copy, nonatomic) NSString        *helpText;

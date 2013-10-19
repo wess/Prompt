@@ -10,15 +10,12 @@
 #import <Prompt/Prompt.h>
 #import "PromptExampleAppDelegate.h"
 
-int main(int argc, const char * argv[])
+int main(int argc, const char *argv[])
 {
 
     @autoreleasepool
     {
-        parseCommandlineArguments(^(NSDictionary *args) {
-            NSLog(@"args: %@", args);
-        });
-        return 0; //PromptApplicationMain(argc, argv, nil, NSStringFromClass([PromptExampleAppDelegate class]));
+        return PromptApplicationMain(NSStringFromClass([PromptExampleAppDelegate class]));
     }
 
 }

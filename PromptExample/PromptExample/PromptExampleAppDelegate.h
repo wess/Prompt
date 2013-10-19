@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Prompt/PromptApplicationDelegate.h>
 
-@interface PromptExampleAppDelegate : NSObject
-
+@interface PromptExampleAppDelegate : NSObject<PromptApplicationDelegate>
 @end

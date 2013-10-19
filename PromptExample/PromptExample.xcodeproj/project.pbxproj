@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D755EA2E181223800080522E /* Prompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D755EA2D181223800080522E /* Prompt.framework */; };
 		D7CC7A20180F721400498C07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC7A1F180F721400498C07 /* Foundation.framework */; };
 		D7CC7A23180F721400498C07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A22180F721400498C07 /* main.m */; };
 		D7CC7A27180F721400498C07 /* PromptExample.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7CC7A26180F721400498C07 /* PromptExample.1 */; };
 		D7CC7A2E180F721B00498C07 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC7A2D180F721B00498C07 /* AppKit.framework */; };
-		D7CC7A30180F722000498C07 /* Prompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC7A2F180F722000498C07 /* Prompt.framework */; };
 		D7CC7A33180F727700498C07 /* PromptExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A32180F727700498C07 /* PromptExampleAppDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -29,13 +29,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D755EA2D181223800080522E /* Prompt.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = Prompt.framework; path = ../Prompt/build/Debug/Prompt.framework; sourceTree = "<group>"; };
 		D7CC7A1C180F721400498C07 /* PromptExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromptExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CC7A1F180F721400498C07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7CC7A22180F721400498C07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7CC7A25180F721400498C07 /* PromptExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PromptExample-Prefix.pch"; sourceTree = "<group>"; };
 		D7CC7A26180F721400498C07 /* PromptExample.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = PromptExample.1; sourceTree = "<group>"; };
 		D7CC7A2D180F721B00498C07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D7CC7A2F180F722000498C07 /* Prompt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prompt.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Prompt-drceptweenxhlafnwoqbpudrpklc/Build/Products/Debug/Prompt.framework"; sourceTree = "<group>"; };
 		D7CC7A31180F727700498C07 /* PromptExampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptExampleAppDelegate.h; sourceTree = "<group>"; };
 		D7CC7A32180F727700498C07 /* PromptExampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptExampleAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7CC7A30180F722000498C07 /* Prompt.framework in Frameworks */,
+				D755EA2E181223800080522E /* Prompt.framework in Frameworks */,
 				D7CC7A2E180F721B00498C07 /* AppKit.framework in Frameworks */,
 				D7CC7A20180F721400498C07 /* Foundation.framework in Frameworks */,
 			);
@@ -74,7 +74,7 @@
 		D7CC7A1E180F721400498C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7CC7A2F180F722000498C07 /* Prompt.framework */,
+				D755EA2D181223800080522E /* Prompt.framework */,
 				D7CC7A2D180F721B00498C07 /* AppKit.framework */,
 				D7CC7A1F180F721400498C07 /* Foundation.framework */,
 			);
@@ -273,6 +273,7 @@
 				D7CC7A2C180F721400498C07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,23 +8,22 @@
 
 #import "Prompt.h"
 #import <Foundation/Foundation.h>
-
-int PromptApplicationMain(int argc, char *argv[], NSString *principalClassName, NSString *delegateClassName)
-{
-
-    return 0;
-}
+#import "PromptApplicationDelegate.h"
+#import "PromptOption.h"
 
 @interface Prompt()
-@property (readonly, nonatomic) NSDictionary *args;
+@property (copy, nonatomic) NSDictionary    *arguments;
+@property (strong, nonatomic) NSArray       *options;
 
-+ (instancetype)sharedInstance;
+- (void)parseCommandlineArguments;
+- (void)processOptions;
+- (int)run;
+
 @end
 
 @implementation Prompt
-@synthesize args = _args;
 
-+ (instancetype)sharedInstance
++ (instancetype)shareApplication
 {
     static id _instance = nil;
     static dispatch_once_t onceToken;
@@ -35,16 +34,99 @@ int PromptApplicationMain(int argc, char *argv[], NSString *principalClassName, 
     return _instance;
 }
 
-
-- (NSDictionary *)args
+- (void)parseCommandlineArguments
 {
-    if(_args)
-        return _args;
+    NSProcessInfo *processInfo  = [NSProcessInfo processInfo];
+    NSArray *arguments          = [processInfo.arguments subarrayWithRange:NSMakeRange(1, (processInfo.arguments.count - 1))];
     
-    NSMutableArray *processArguments = [[[NSProcessInfo processInfo] arguments] mutableCopy];
-    [processArguments removeObjectAtIndex:0];
+    if([self.delegate respondsToSelector:@selector(application:willParseArugments:)])
+        [self.delegate application:self willParseArugments:arguments];
     
-    return @{};
+    __block NSMutableArray *keys    = [[NSMutableArray alloc] init];
+    __block NSMutableArray *vals    = [[NSMutableArray alloc] init];
+    
+    [arguments enumerateObjectsUsingBlock:^(NSString *item, NSUInteger idx, BOOL *stop) {
+        if([item rangeOfString:@"-"].location != NSNotFound || [item rangeOfString:@"--"].location != NSNotFound)
+        {
+            if([item rangeOfString:@"="].location != NSNotFound)
+            {
+                NSArray *split  = [item componentsSeparatedByString:@"="];
+                NSString *key   = split[0];
+                NSString *val   = split[1]?:@"";
+                
+                [keys addObject:key];
+                [vals addObject:val];
+            }
+            else
+            {
+                [keys addObject:item];
+            }
+        }
+        else
+        {
+            [vals addObject:item];
+        }
+        
+    }];
+    
+    NSMutableDictionary *mutableArgs = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
+    [keys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+        
+        if([mutableArgs objectForKey:key])
+        {
+            NSArray *arg = [mutableArgs objectForKey:key];
+            [mutableArgs setObject:[arg arrayByAddingObject:vals[idx]] forKey:key];
+        }
+        else
+        {
+            [mutableArgs setObject:@[vals[idx]] forKey:key];
+        }
+    }];
+    
+    self.arguments = [mutableArgs copy];
+
+    if([self.delegate respondsToSelector:@selector(application:didParseArugments:)])
+        [self.delegate application:self didParseArugments:self.arguments];
+}
+
+- (void)processOptions
+{
+    NSArray *flags = [self.arguments allKeys];
+    [flags enumerateObjectsUsingBlock:^(NSString *flag, NSUInteger idx, BOOL *stop) {
+        NSPredicate *predicate  = [NSPredicate predicateWithFormat:@"flags CONTAINS[cd] %@", flag];
+        NSArray *options        = [self.options filteredArrayUsingPredicate:predicate];
+        
+        if(options.count > 0)
+        {
+            NSArray *args = [self.arguments objectForKey:flag];
+            
+            [options enumerateObjectsUsingBlock:^(PromptOption *option, NSUInteger idx, BOOL *stop) {
+                option.handler(args);
+            }];
+            
+            *stop = YES;
+        }
+        
+    }];
+}
+
+- (int)run
+{
+    self.options = [[self.delegate optionsForApplication:self] copy];
+    
+    [self parseCommandlineArguments];
+    [self processOptions];
+    
+    return [self.delegate application:self runningOptions:self.options]? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
 @end
+
+int PromptApplicationMain(NSString *delegateClassName)
+{
+    id<PromptApplicationDelegate> delegate  = [[NSClassFromString(delegateClassName) alloc] init];
+    Prompt *app                             = [Prompt shareApplication];
+    app.delegate                            = delegate;
+    
+    return [app run];
+}
