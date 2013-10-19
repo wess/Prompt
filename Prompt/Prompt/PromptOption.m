@@ -9,7 +9,7 @@
 #import "PromptOption.h"
 
 @implementation PromptOption
-+ (instancetype)promptOptionWithFlags:(NSArray *)flags required:(BOOL)isRequired helpText:(NSString *)helpText handler:(PromptHandler)handler
++ (instancetype)promptOptionWithFlags:(NSArray *)flags required:(BOOL)isRequired helpText:(NSString *)helpText handler:(PromptOptionHandler)handler
 {
     PromptOption *this  = [[PromptOption alloc] init];
     this.flags          = flags;

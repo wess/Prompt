@@ -91,20 +91,27 @@
 
 - (void)processOptions
 {
-    NSArray *flags = [self.arguments allKeys];
+    NSArray *flags                  = [self.arguments allKeys];
+    NSMutableArray *mutableOptions  = [self.options mutableCopy];
+    
     [flags enumerateObjectsUsingBlock:^(NSString *flag, NSUInteger idx, BOOL *stop) {
         NSPredicate *predicate  = [NSPredicate predicateWithFormat:@"flags CONTAINS[cd] %@", flag];
-        NSArray *options        = [self.options filteredArrayUsingPredicate:predicate];
+        NSArray *options        = [mutableOptions filteredArrayUsingPredicate:predicate];
         
         if(options.count > 0)
         {
-            NSArray *args = [self.arguments objectForKey:flag];
+            [mutableOptions removeObjectsInArray:options];
             
-            [options enumerateObjectsUsingBlock:^(PromptOption *option, NSUInteger idx, BOOL *stop) {
-                option.handler(args);
-            }];
+            NSArray *args           = [self.arguments objectForKey:flag];
+            PromptOption *option    = [options lastObject];
             
-            *stop = YES;
+            if([self.delegate respondsToSelector:@selector(application:willRunWithOption:)])
+                [self.delegate application:self willRunWithOption:option];
+            
+            option.handler(args);
+            
+            if([self.delegate respondsToSelector:@selector(application:didRunWithOption:)])
+                [self.delegate application:self didRunWithOption:option];
         }
         
     }];

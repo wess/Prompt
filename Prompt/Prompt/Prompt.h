@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Nudge. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #ifndef _APPKITDEFINES_H
 #warning AppKit framework is required.
 #endif
 
-@protocol PromptApplicationDelegate;
-@class PromptOption;
+#import <Foundation/Foundation.h>
+#import "PromptApplicationDelegate.h"
+#import "PromptOption.h"
+#import "PromptInput.h"
 
 @interface Prompt : NSObject
 @property (weak, nonatomic) id<PromptApplicationDelegate> delegate;

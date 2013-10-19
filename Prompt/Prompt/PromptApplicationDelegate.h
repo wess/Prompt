@@ -16,8 +16,8 @@
 - (BOOL)application:(Prompt *)application runningOptions:(NSArray *)options;
 
 @optional
-- (void)application:(Prompt *)application willRunOption:(PromptOption *)option;
-- (void)application:(Prompt *)application didRunOption:(PromptOption *)option;
+- (void)application:(Prompt *)application willRunWithOption:(PromptOption *)option;
+- (void)application:(Prompt *)application didRunWithOption:(PromptOption *)option;
 - (void)application:(Prompt *)application willParseArugments:(NSArray *)arguments;
 - (void)application:(Prompt *)application didParseArugments:(NSDictionary *)arguments;
 
