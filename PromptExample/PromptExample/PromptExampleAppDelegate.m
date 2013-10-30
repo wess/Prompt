@@ -14,11 +14,11 @@
 
 - (NSArray *)optionsForApplication:(Prompt *)application
 {
-    PromptOption *foo = [PromptOption promptOptionWithFlags:@[@"-f", @"--foo"] required:NO helpText:@"Testing Options" handler:^(NSArray *arguments) {
+    PromptOption *foo = [PromptOption promptOptionWithCommand:@"foo" helpText:@"Foo me Baby!" handler:^(NSDictionary *arguments) {
         NSLog(@"args: %@", arguments);
     }];
 
-    PromptOption *hello = [PromptOption promptOptionWithFlags:@[@"-h", @"--hello"] required:NO helpText:@"Testing Options" handler:^(NSArray *arguments) {
+    PromptOption *hello = [PromptOption promptOptionWithCommand:@"hello" helpText:@"Hello world?" handler:^(NSDictionary *arguments) {
         [PromptInput promptUser:@"Please enter something: " completionHandler:^(NSString *response) {
             NSLog(@"SOMETHING: %@", response);
         }];
@@ -30,26 +30,6 @@
 - (BOOL)application:(Prompt *)application runningOptions:(NSArray *)options
 {
     return YES;
-}
-
-- (void)application:(Prompt *)application willRunWithOption:(PromptOption *)option
-{
-    NSLog(@"Will Run Option: %@", option.flags);
-}
-
-- (void)application:(Prompt *)application didRunWithOption:(PromptOption *)option
-{
-    NSLog(@"Did Run Option: %@", option.flags);
-}
-
-- (void)application:(Prompt *)application willParseArugments:(NSArray *)arguments
-{
-    NSLog(@"PRE PARSE: %@", arguments);
-}
-
-- (void)application:(Prompt *)application didParseArugments:(NSDictionary *)arguments
-{
-    NSLog(@"POST PARSE: %@", arguments);
 }
 
 @end

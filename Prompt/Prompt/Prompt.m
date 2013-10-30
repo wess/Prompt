@@ -12,6 +12,7 @@
 #import "PromptOption.h"
 
 @interface Prompt()
+@property (copy, nonatomic) NSString        *command;
 @property (copy, nonatomic) NSDictionary    *arguments;
 @property (strong, nonatomic) NSArray       *options;
 
@@ -39,34 +40,38 @@
     NSProcessInfo *processInfo  = [NSProcessInfo processInfo];
     NSArray *arguments          = [processInfo.arguments subarrayWithRange:NSMakeRange(1, (processInfo.arguments.count - 1))];
     
-    if([self.delegate respondsToSelector:@selector(application:willParseArugments:)])
-        [self.delegate application:self willParseArugments:arguments];
-    
+    __block NSString *command       = nil;
     __block NSMutableArray *keys    = [[NSMutableArray alloc] init];
     __block NSMutableArray *vals    = [[NSMutableArray alloc] init];
     
     [arguments enumerateObjectsUsingBlock:^(NSString *item, NSUInteger idx, BOOL *stop) {
-        if([item rangeOfString:@"-"].location != NSNotFound || [item rangeOfString:@"--"].location != NSNotFound)
+        if(idx == 0)
         {
-            if([item rangeOfString:@"="].location != NSNotFound)
-            {
-                NSArray *split  = [item componentsSeparatedByString:@"="];
-                NSString *key   = split[0];
-                NSString *val   = split[1]?:@"";
-                
-                [keys addObject:key];
-                [vals addObject:val];
-            }
-            else
-            {
-                [keys addObject:item];
-            }
+            command = item;
         }
         else
         {
-            [vals addObject:item];
+            if([item rangeOfString:@"-"].location != NSNotFound || [item rangeOfString:@"--"].location != NSNotFound)
+            {
+                if([item rangeOfString:@"="].location != NSNotFound)
+                {
+                    NSArray *split  = [item componentsSeparatedByString:@"="];
+                    NSString *key   = split[0];
+                    NSString *val   = split[1]?:@"";
+                    
+                    [keys addObject:key];
+                    [vals addObject:val];
+                }
+                else
+                {
+                    [keys addObject:item];
+                }
+            }
+            else
+            {
+                [vals addObject:item];
+            }
         }
-        
     }];
     
     NSMutableDictionary *mutableArgs = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
@@ -85,37 +90,26 @@
         }
     }];
     
-    self.arguments = [mutableArgs copy];
+    self.command    = command;
+    self.arguments  = [mutableArgs copy];
 
-    if([self.delegate respondsToSelector:@selector(application:didParseArugments:)])
-        [self.delegate application:self didParseArugments:self.arguments];
 }
 
 - (void)processOptions
 {
-    NSArray *flags                  = [self.arguments allKeys];
-    NSMutableArray *mutableOptions  = [self.options mutableCopy];
-    
-    [flags enumerateObjectsUsingBlock:^(NSString *flag, NSUInteger idx, BOOL *stop) {
-        NSPredicate *predicate  = [NSPredicate predicateWithFormat:@"flags CONTAINS[cd] %@", flag];
-        NSArray *options        = [mutableOptions filteredArrayUsingPredicate:predicate];
-        
-        if(options.count > 0)
+    [self.options enumerateObjectsUsingBlock:^(PromptOption *option, NSUInteger idx, BOOL *stop) {
+        if([[option.command lowercaseString] isEqualToString:[self.command lowercaseString]])
         {
-            [mutableOptions removeObjectsInArray:options];
+            if([self.delegate respondsToSelector:@selector(application:willRunCommand:forOption:)])
+                [self.delegate application:self willRunCommand:self.command forOption:option];
             
-            NSArray *args           = [self.arguments objectForKey:flag];
-            PromptOption *option    = [options lastObject];
+            option.handler([self.arguments copy]);
             
-            if([self.delegate respondsToSelector:@selector(application:willRunWithOption:)])
-                [self.delegate application:self willRunWithOption:option];
+            if([self.delegate respondsToSelector:@selector(application:didRunCommand:forOption:)])
+                [self.delegate application:self didRunCommand:self.command forOption:option];
             
-            option.handler(args);
-            
-            if([self.delegate respondsToSelector:@selector(application:didRunWithOption:)])
-                [self.delegate application:self didRunWithOption:option];
+            *stop = YES;
         }
-        
     }];
 }
 

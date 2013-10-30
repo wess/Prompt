@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^PromptOptionHandler)(NSArray *arguments);
+typedef void(^PromptOptionHandler)(NSDictionary *);
 
 @interface PromptOption : NSObject
+@property (copy, nonatomic) NSString            *command;
 @property (copy, nonatomic) NSString            *helpText;
-@property (copy, nonatomic) NSArray             *flags;
 @property (copy, nonatomic) PromptOptionHandler handler;
-@property (nonatomic) BOOL                      isRequired;
 
-+ (instancetype)promptOptionWithFlags:(NSArray *)flags required:(BOOL)isRequired helpText:(NSString *)helpText handler:(PromptOptionHandler)handler;
++ (instancetype)promptOptionWithCommand:(NSString *)command helpText:(NSString *)helpText handler:(PromptOptionHandler)handler;
 
 @end
