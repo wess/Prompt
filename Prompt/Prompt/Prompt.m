@@ -53,18 +53,19 @@
         {
             if([item rangeOfString:@"-"].location != NSNotFound || [item rangeOfString:@"--"].location != NSNotFound)
             {
+                NSString *key   = [item stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
+                
                 if([item rangeOfString:@"="].location != NSNotFound)
                 {
                     NSArray *split  = [item componentsSeparatedByString:@"="];
-                    NSString *key   = split[0];
-                    NSString *val   = split[1]?:@"";
+                    NSString *val   = split[1]?: @"";
                     
                     [keys addObject:key];
                     [vals addObject:val];
                 }
                 else
                 {
-                    [keys addObject:item];
+                    [keys addObject:key];
                 }
             }
             else
