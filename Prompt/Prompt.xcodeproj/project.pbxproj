@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74233721822D06600A33E4E /* PromptFlag.h in Headers */ = {isa = PBXBuildFile; fileRef = D74233701822D06600A33E4E /* PromptFlag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D74233731822D06600A33E4E /* PromptFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = D74233711822D06600A33E4E /* PromptFlag.m */; };
 		D783D3CF1812D0CC00D406D9 /* PromptInput.h in Headers */ = {isa = PBXBuildFile; fileRef = D783D3CD1812D0CC00D406D9 /* PromptInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D783D3D01812D0CC00D406D9 /* PromptInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D783D3CE1812D0CC00D406D9 /* PromptInput.m */; };
 		D7AD98A5181031CC004B5A71 /* PromptApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D7AD98A3181031CC004B5A71 /* PromptApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D74233701822D06600A33E4E /* PromptFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptFlag.h; sourceTree = "<group>"; };
+		D74233711822D06600A33E4E /* PromptFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptFlag.m; sourceTree = "<group>"; };
 		D783D3CD1812D0CC00D406D9 /* PromptInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptInput.h; sourceTree = "<group>"; };
 		D783D3CE1812D0CC00D406D9 /* PromptInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptInput.m; sourceTree = "<group>"; };
 		D7AD98A3181031CC004B5A71 /* PromptApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptApplicationDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D742336F1822D05700A33E4E /* Flag */ = {
+			isa = PBXGroup;
+			children = (
+				D74233701822D06600A33E4E /* PromptFlag.h */,
+				D74233711822D06600A33E4E /* PromptFlag.m */,
+			);
+			name = Flag;
+			sourceTree = "<group>";
+		};
 		D783D3CC1812D0BC00D406D9 /* Input */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		D7CC79C8180F6E2900498C07 /* Prompt */ = {
 			isa = PBXGroup;
 			children = (
+				D742336F1822D05700A33E4E /* Flag */,
 				D783D3CC1812D0BC00D406D9 /* Input */,
 				D7AD98A718103800004B5A71 /* Option */,
 				D7AD98A3181031CC004B5A71 /* PromptApplicationDelegate.h */,
@@ -188,6 +202,7 @@
 				D7CC7A38180F72D500498C07 /* Prompt.h in Headers */,
 				D7AD98A5181031CC004B5A71 /* PromptApplicationDelegate.h in Headers */,
 				D783D3CF1812D0CC00D406D9 /* PromptInput.h in Headers */,
+				D74233721822D06600A33E4E /* PromptFlag.h in Headers */,
 				D7AD98AA18103810004B5A71 /* PromptOption.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +305,7 @@
 				D7AD98AB18103810004B5A71 /* PromptOption.m in Sources */,
 				D783D3D01812D0CC00D406D9 /* PromptInput.m in Sources */,
 				D7CC7A39180F72D500498C07 /* Prompt.m in Sources */,
+				D74233731822D06600A33E4E /* PromptFlag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

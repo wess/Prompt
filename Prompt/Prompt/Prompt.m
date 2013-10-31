@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "PromptApplicationDelegate.h"
 #import "PromptOption.h"
+#import "PromptFlag.h"
 
 @interface Prompt()
 @property (copy, nonatomic) NSString        *command;
@@ -55,12 +56,12 @@
             {
                 NSString *key   = [item stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
                 
-                if([item rangeOfString:@"="].location != NSNotFound)
+                if([key rangeOfString:@"="].location != NSNotFound)
                 {
-                    NSArray *split  = [item componentsSeparatedByString:@"="];
+                    NSArray *split  = [key componentsSeparatedByString:@"="];
                     NSString *val   = split[1]?: @"";
                     
-                    [keys addObject:key];
+                    [keys addObject:split[0]];
                     [vals addObject:val];
                 }
                 else
@@ -103,8 +104,33 @@
         {
             if([self.delegate respondsToSelector:@selector(application:willRunCommand:forOption:)])
                 [self.delegate application:self willRunCommand:self.command forOption:option];
+         
+            __block NSMutableDictionary *args = [self.arguments mutableCopy];
             
-            option.handler([self.arguments copy]);
+            if(!option.flags || option.flags.count < 1)
+            {
+                args = [self.arguments mutableCopy];
+            }
+            else
+            {
+                [self.arguments enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *arguments, BOOL *stop) {
+                    [option.flags  enumerateObjectsUsingBlock:^(PromptFlag *flag, NSUInteger idx, BOOL *stop) {
+                        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", key];
+                        NSArray *filteredFlags = [flag.flags filteredArrayUsingPredicate:predicate];
+                        
+                        if(filteredFlags.count > 0)
+                        {
+                            args[flag.name] = arguments;
+                            [args removeObjectForKey:key];
+                        }
+                    }];
+                }];
+                
+                self.arguments = [args copy];
+            }
+            
+            
+            option.handler([args copy]);
             
             if([self.delegate respondsToSelector:@selector(application:didRunCommand:forOption:)])
                 [self.delegate application:self didRunCommand:self.command forOption:option];

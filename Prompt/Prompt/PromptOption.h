@@ -13,6 +13,7 @@ typedef void(^PromptOptionHandler)(NSDictionary *);
 @interface PromptOption : NSObject
 @property (copy, nonatomic) NSString            *command;
 @property (copy, nonatomic) NSString            *helpText;
+@property (copy, nonatomic) NSArray             *flags;
 @property (copy, nonatomic) PromptOptionHandler handler;
 
 + (instancetype)promptOptionWithCommand:(NSString *)command helpText:(NSString *)helpText handler:(PromptOptionHandler)handler;

@@ -9,22 +9,22 @@
 #import "PromptExampleAppDelegate.h"
 #import <Prompt/PromptOption.h>
 #import <Prompt/PromptInput.h>
+#import <Prompt/PromptFlag.h>
 
 @implementation PromptExampleAppDelegate
 
 - (NSArray *)optionsForApplication:(Prompt *)application
 {
-    PromptOption *foo = [PromptOption promptOptionWithCommand:@"foo" helpText:@"Foo me Baby!" handler:^(NSDictionary *arguments) {
-        NSLog(@"args: %@", arguments);
-    }];
-
     PromptOption *hello = [PromptOption promptOptionWithCommand:@"hello" helpText:@"Hello world?" handler:^(NSDictionary *arguments) {
-        [PromptInput promptUser:@"Please enter something: " completionHandler:^(NSString *response) {
-            NSLog(@"SOMETHING: %@", response);
-        }];
+        NSLog(@"ARGS: %@", arguments);
     }];
     
-    return @[foo, hello];
+    PromptFlag *a = [PromptFlag promptFlagWithName:@"AAAA" definition:@"All As" flags:@[@"f", @"foo"]];
+    PromptFlag *b = [PromptFlag promptFlagWithName:@"BBBB" definition:@"All Bs" flags:@[@"h"]];
+    
+    hello.flags = @[a, b];
+    
+    return @[hello];
 }
 
 - (BOOL)application:(Prompt *)application runningOptions:(NSArray *)options
