@@ -7,6 +7,7 @@
 //
 
 #import "PromptInput.h"
+#import <unistd.h>
 
 @interface PromptInput()
 @property (copy, nonatomic) PromptInputHandler handler;
@@ -31,27 +32,56 @@
     [this handleStdin];
 }
 
++ (void)promptUser:(NSString *)prompt isSecure:(BOOL)isSecure completionHandler:(PromptInputHandler)handler
+{
+    PromptInput *this   = [[PromptInput alloc] init];
+    this.prompt         = prompt;
+    this.handler        = handler;
+    this.isSecure       = isSecure;
+    
+    [this handleStdin];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.isSecure = NO;
+    }
+    return self;
+}
+
 - (void)handleStdin
 {
-    printf("%s", [self.prompt UTF8String]);
-    
-    NSFileHandle *stdin = [NSFileHandle fileHandleWithStandardInput];
     NSString *response  = nil;
-    if(self.length > 0)
+
+    if(self.isSecure)
     {
-        response = [[NSString alloc] initWithData:[stdin readDataOfLength:self.length] encoding:NSUTF8StringEncoding];
+        char *secureEntry   = getpass([self.prompt UTF8String]);
+        response            = [[NSString alloc] initWithCString:secureEntry encoding:NSUTF8StringEncoding];
     }
     else
     {
-        while(YES)
+        printf("%s", [self.prompt UTF8String]);
+
+        NSFileHandle *stdin = [NSFileHandle fileHandleWithStandardInput];
+        if(self.length > 0)
         {
-            NSData *input = [stdin availableData];
-            NSString *str = [[NSString alloc] initWithData:input encoding:NSUTF8StringEncoding];
-            
-            if([str rangeOfString:@"\n"].location != NSNotFound)
+            response = [[NSString alloc] initWithData:[stdin readDataOfLength:self.length] encoding:NSUTF8StringEncoding];
+        }
+        else
+        {
+            while(YES)
             {
-                response = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                break;
+                NSData *input = [stdin availableData];
+                NSString *str = [[NSString alloc] initWithData:input encoding:NSUTF8StringEncoding];
+                
+                if([str rangeOfString:@"\n"].location != NSNotFound)
+                {
+                    response = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                    break;
+                }
             }
         }
     }

@@ -11,6 +11,9 @@
 typedef void(^PromptInputHandler)(NSString *response);
 
 @interface PromptInput : NSObject
+@property (nonatomic) BOOL isSecure;
+
 + (void)promptUser:(NSString *)prompt completionHandler:(PromptInputHandler)handler;
++ (void)promptUser:(NSString *)prompt isSecure:(BOOL)isSecure completionHandler:(PromptInputHandler)handler;
 + (void)promptUser:(NSString *)prompt length:(NSUInteger)length completionHandler:(PromptInputHandler)handler;
 @end
