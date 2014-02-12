@@ -71,7 +71,7 @@
             }
             else
             {
-                [vals addObject:item];
+                [keys addObject:item];
             }
         }
     }];
@@ -86,11 +86,14 @@
         }
         else
         {
-            id val = vals.count > idx? [vals objectAtIndex:idx] : @"";
+            id val = vals.count > idx? [vals objectAtIndex:idx] : nil;
 
-            [mutableArgs setObject:@[val] forKey:key];
+            if(val)
+                [mutableArgs setObject:@[val] forKey:key];
         }
     }];
+    
+    [mutableArgs setObject:keys forKey:@"keys"];
     
     self.command    = command;
     self.arguments  = [mutableArgs copy];
