@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D755EA2E181223800080522E /* Prompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D755EA2D181223800080522E /* Prompt.framework */; };
+		08B9784A18AC4CBB00FD02C7 /* Prompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B9784918AC4CBB00FD02C7 /* Prompt.framework */; };
+		08B9784B18AC4CD500FD02C7 /* Prompt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08B9784918AC4CBB00FD02C7 /* Prompt.framework */; };
 		D7CC7A20180F721400498C07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC7A1F180F721400498C07 /* Foundation.framework */; };
 		D7CC7A23180F721400498C07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A22180F721400498C07 /* main.m */; };
-		D7CC7A27180F721400498C07 /* PromptExample.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7CC7A26180F721400498C07 /* PromptExample.1 */; };
 		D7CC7A2E180F721B00498C07 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC7A2D180F721B00498C07 /* AppKit.framework */; };
 		D7CC7A33180F727700498C07 /* PromptExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC7A32180F727700498C07 /* PromptExampleAppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -18,18 +18,19 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		D7CC7A1A180F721400498C07 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 6;
 			files = (
-				D7CC7A27180F721400498C07 /* PromptExample.1 in CopyFiles */,
+				08B9784B18AC4CD500FD02C7 /* Prompt.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D755EA2D181223800080522E /* Prompt.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = Prompt.framework; path = ../Prompt/build/Debug/Prompt.framework; sourceTree = "<group>"; };
+		08B9784818AC4CAF00FD02C7 /* Prompt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = Prompt.xcodeproj; path = ../Prompt/Prompt.xcodeproj; sourceTree = "<group>"; };
+		08B9784918AC4CBB00FD02C7 /* Prompt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prompt.framework; path = ../Builds/Prompt/Build/Products/Debug/Prompt.framework; sourceTree = "<group>"; };
 		D7CC7A1C180F721400498C07 /* PromptExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromptExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CC7A1F180F721400498C07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7CC7A22180F721400498C07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D755EA2E181223800080522E /* Prompt.framework in Frameworks */,
+				08B9784A18AC4CBB00FD02C7 /* Prompt.framework in Frameworks */,
 				D7CC7A2E180F721B00498C07 /* AppKit.framework in Frameworks */,
 				D7CC7A20180F721400498C07 /* Foundation.framework in Frameworks */,
 			);
@@ -74,7 +75,8 @@
 		D7CC7A1E180F721400498C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D755EA2D181223800080522E /* Prompt.framework */,
+				08B9784918AC4CBB00FD02C7 /* Prompt.framework */,
+				08B9784818AC4CAF00FD02C7 /* Prompt.xcodeproj */,
 				D7CC7A2D180F721B00498C07 /* AppKit.framework */,
 				D7CC7A1F180F721400498C07 /* Foundation.framework */,
 			);
@@ -233,10 +235,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Prompt-drceptweenxhlafnwoqbpudrpklc/Build/Products/Debug",
+					"$(SRCROOT)/**",
+					/Users/wesscope/Desktop/Mine/Prompt/Builds/Prompt/Build/Products/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PromptExample/PromptExample-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,10 +250,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Prompt-drceptweenxhlafnwoqbpudrpklc/Build/Products/Debug",
+					"$(SRCROOT)/**",
+					/Users/wesscope/Desktop/Mine/Prompt/Builds/Prompt/Build/Products/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PromptExample/PromptExample-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

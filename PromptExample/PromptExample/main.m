@@ -8,15 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <Prompt/Prompt.h>
+#import <Prompt/PromptTerminal.h>
 #import "PromptExampleAppDelegate.h"
 
 int main(int argc, const char *argv[])
 {
 
-    @autoreleasepool
-    {
-        return PromptApplicationMain(NSStringFromClass([PromptExampleAppDelegate class]));
-    }
+//    @autoreleasepool
+//    {
+//        
+        NSString *string = PromptSetColorForString(@"Hello World", PromptColorGreen);
+        printf("%s", string.UTF8String);
 
+//        return PromptApplicationMain(NSStringFromClass([PromptExampleAppDelegate class]));
+//    }
+//
+    return 0;
 }
 

@@ -10,20 +10,22 @@
 #import <Prompt/PromptOption.h>
 #import <Prompt/PromptInput.h>
 #import <Prompt/PromptFlag.h>
+#import <Prompt/PromptTerminal.h>
 
 @implementation PromptExampleAppDelegate
 
 - (NSArray *)optionsForApplication:(Prompt *)application
 {
     PromptOption *hello = [PromptOption promptOptionWithCommand:@"hello" helpText:@"Hello world?" handler:^(NSDictionary *arguments) {
-        NSLog(@"ARGS: %@", arguments);
+        NSString *string = PromptSetColorForString(@"Hello World", PromptColorGreen);
+        NSLog(@"%@", string);
     }];
     
     PromptFlag *a = [PromptFlag promptFlagWithName:@"AAAA" definition:@"All As" flags:@[@"f", @"foo"]];
     PromptFlag *b = [PromptFlag promptFlagWithName:@"BBBB" definition:@"All Bs" flags:@[@"h"]];
     
     hello.flags = @[a, b];
-    
+
     return @[hello];
 }
 

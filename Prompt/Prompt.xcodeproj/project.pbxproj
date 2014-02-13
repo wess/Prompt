@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082A31B718AC272200F57391 /* PromptAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 082A31B518AC272200F57391 /* PromptAttributedString.h */; };
+		082A31B818AC272200F57391 /* PromptAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 082A31B618AC272200F57391 /* PromptAttributedString.m */; };
+		082A31C618AC2D4800F57391 /* PromptTerminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 082A31C418AC2D4800F57391 /* PromptTerminal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		082A31C718AC2D4800F57391 /* PromptTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = 082A31C518AC2D4800F57391 /* PromptTerminal.m */; };
 		D74233721822D06600A33E4E /* PromptFlag.h in Headers */ = {isa = PBXBuildFile; fileRef = D74233701822D06600A33E4E /* PromptFlag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D74233731822D06600A33E4E /* PromptFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = D74233711822D06600A33E4E /* PromptFlag.m */; };
 		D783D3CF1812D0CC00D406D9 /* PromptInput.h in Headers */ = {isa = PBXBuildFile; fileRef = D783D3CD1812D0CC00D406D9 /* PromptInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082A31B518AC272200F57391 /* PromptAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptAttributedString.h; sourceTree = "<group>"; };
+		082A31B618AC272200F57391 /* PromptAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptAttributedString.m; sourceTree = "<group>"; };
+		082A31C418AC2D4800F57391 /* PromptTerminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptTerminal.h; sourceTree = "<group>"; };
+		082A31C518AC2D4800F57391 /* PromptTerminal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptTerminal.m; sourceTree = "<group>"; };
 		D74233701822D06600A33E4E /* PromptFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptFlag.h; sourceTree = "<group>"; };
 		D74233711822D06600A33E4E /* PromptFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptFlag.m; sourceTree = "<group>"; };
 		D783D3CD1812D0CC00D406D9 /* PromptInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptInput.h; sourceTree = "<group>"; };
@@ -84,6 +92,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082A31B418AC271300F57391 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				082A31B518AC272200F57391 /* PromptAttributedString.h */,
+				082A31B618AC272200F57391 /* PromptAttributedString.m */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
+		082A31BF18AC2D0B00F57391 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				082A31C418AC2D4800F57391 /* PromptTerminal.h */,
+				082A31C518AC2D4800F57391 /* PromptTerminal.m */,
+			);
+			name = Terminal;
+			sourceTree = "<group>";
+		};
 		D742336F1822D05700A33E4E /* Flag */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +179,8 @@
 		D7CC79C8180F6E2900498C07 /* Prompt */ = {
 			isa = PBXGroup;
 			children = (
+				082A31BF18AC2D0B00F57391 /* Terminal */,
+				082A31B418AC271300F57391 /* String */,
 				D742336F1822D05700A33E4E /* Flag */,
 				D783D3CC1812D0BC00D406D9 /* Input */,
 				D7AD98A718103800004B5A71 /* Option */,
@@ -203,7 +231,9 @@
 				D7AD98A5181031CC004B5A71 /* PromptApplicationDelegate.h in Headers */,
 				D783D3CF1812D0CC00D406D9 /* PromptInput.h in Headers */,
 				D74233721822D06600A33E4E /* PromptFlag.h in Headers */,
+				082A31C618AC2D4800F57391 /* PromptTerminal.h in Headers */,
 				D7AD98AA18103810004B5A71 /* PromptOption.h in Headers */,
+				082A31B718AC272200F57391 /* PromptAttributedString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7AD98AB18103810004B5A71 /* PromptOption.m in Sources */,
+				082A31C718AC2D4800F57391 /* PromptTerminal.m in Sources */,
 				D783D3D01812D0CC00D406D9 /* PromptInput.m in Sources */,
+				082A31B818AC272200F57391 /* PromptAttributedString.m in Sources */,
 				D7CC7A39180F72D500498C07 /* Prompt.m in Sources */,
 				D74233731822D06600A33E4E /* PromptFlag.m in Sources */,
 			);
