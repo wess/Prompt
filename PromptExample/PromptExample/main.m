@@ -14,15 +14,11 @@
 int main(int argc, const char *argv[])
 {
 
-//    @autoreleasepool
-//    {
-//        
-        NSString *string = PromptSetColorForString(@"Hello World", PromptColorGreen);
-        printf("%s", string.UTF8String);
+    @autoreleasepool
+    {
+        return PromptApplicationMain(NSStringFromClass([PromptExampleAppDelegate class]));
+    }
 
-//        return PromptApplicationMain(NSStringFromClass([PromptExampleAppDelegate class]));
-//    }
-//
     return 0;
 }
 

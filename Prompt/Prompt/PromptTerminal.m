@@ -8,15 +8,15 @@
 
 #import "PromptTerminal.h"
 
-NSString *const PromptTerminalEscapeString = @"\\033[%@m%@\\033[0m";
-NSString *const PromptTerminalNothingString = @"\033[0m";
+NSString *const PromptTerminalEscapeString = @"\e[00;%@m%@%@";
+NSString *const PromptTerminalNothingString = @"\e[0m";
 
 NSString *PromptSetColorForString(NSString *string, PromptColor color)
 {
     if(!color)
         return string;
 
-    string = [NSString stringWithFormat:PromptTerminalEscapeString, @(color), string];
+    string = [NSString stringWithFormat:PromptTerminalEscapeString, @(color), string, PromptTerminalNothingString];
     
     return string;
 }

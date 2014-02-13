@@ -18,7 +18,9 @@
 {
     PromptOption *hello = [PromptOption promptOptionWithCommand:@"hello" helpText:@"Hello world?" handler:^(NSDictionary *arguments) {
         NSString *string = PromptSetColorForString(@"Hello World", PromptColorGreen);
-        NSLog(@"%@", string);
+        NSString *stringTwo = PromptSetColorForString(@"Hey there", PromptColorRedBackground);
+        
+        printf("%s%s\n", string.UTF8String, stringTwo.UTF8String);
     }];
     
     PromptFlag *a = [PromptFlag promptFlagWithName:@"AAAA" definition:@"All As" flags:@[@"f", @"foo"]];
