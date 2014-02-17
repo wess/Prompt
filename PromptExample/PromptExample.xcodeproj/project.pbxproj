@@ -238,7 +238,6 @@
 					"$(SRCROOT)/**",
 					/Users/wesscope/Desktop/Mine/Prompt/Builds/Prompt/Build/Products/Debug,
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					/Users/sam/Desktop/Prompt/Prompt/build/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PromptExample/PromptExample-Prefix.pch";
@@ -255,7 +254,6 @@
 					"$(SRCROOT)/**",
 					/Users/wesscope/Desktop/Mine/Prompt/Builds/Prompt/Build/Products/Debug,
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					/Users/sam/Desktop/Prompt/Prompt/build/Debug,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PromptExample/PromptExample-Prefix.pch";

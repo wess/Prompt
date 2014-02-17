@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		082A31B718AC272200F57391 /* PromptAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 082A31B518AC272200F57391 /* PromptAttributedString.h */; };
+		082A31B718AC272200F57391 /* PromptAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 082A31B518AC272200F57391 /* PromptAttributedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		082A31B818AC272200F57391 /* PromptAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 082A31B618AC272200F57391 /* PromptAttributedString.m */; };
 		082A31C618AC2D4800F57391 /* PromptTerminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 082A31C418AC2D4800F57391 /* PromptTerminal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		082A31C718AC2D4800F57391 /* PromptTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = 082A31C518AC2D4800F57391 /* PromptTerminal.m */; };

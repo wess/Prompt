@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PromptTerminal.h"
 
+@interface PromptAttributedString : NSObject<NSCopying>
+@property (readonly, nonatomic) NSUInteger length;
 
-
-@interface PromptAttributedString : NSObject
+- (instancetype)initWithString:(NSString *)string;
+- (void)addAttribute:(PromptTextAttribute)attribute range:(NSRange)range;
+- (PromptAttributedString *)stringByAppendingString:(NSString *)string;
+- (NSData *)dataUsingEncoding:(NSStringEncoding)encoding;
+- (NSData *)dataUsingEncoding:(NSStringEncoding)encoding allowLossyConversion:(BOOL)lossy;
 
 @end

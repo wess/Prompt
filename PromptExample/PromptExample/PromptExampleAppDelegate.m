@@ -11,16 +11,18 @@
 #import <Prompt/PromptInput.h>
 #import <Prompt/PromptFlag.h>
 #import <Prompt/PromptTerminal.h>
+#import <Prompt/PromptAttributedString.h>
 
 @implementation PromptExampleAppDelegate
 
 - (NSArray *)optionsForApplication:(Prompt *)application
 {
     PromptOption *hello = [PromptOption promptOptionWithCommand:@"hello" helpText:@"Hello world?" handler:^(NSDictionary *arguments) {
-        NSString *string = PromptSetColorForString(@"Hello World", PromptColorGreen);
-        NSString *stringTwo = PromptSetColorForString(@"Hey there", PromptColorRedBackground);
         
-        printf("%s%s\n", string.UTF8String, stringTwo.UTF8String);
+        PromptAttributedString *string = [[PromptAttributedString alloc] initWithString:@"Hello World!"];
+        [string addAttribute:PromptColorBlue range:NSMakeRange(0, 4)];
+        
+        PromptPrintLine(string);
     }];
     
     PromptFlag *a = [PromptFlag promptFlagWithName:@"AAAA" definition:@"All As" flags:@[@"f", @"foo"]];

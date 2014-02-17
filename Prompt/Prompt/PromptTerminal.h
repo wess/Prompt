@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, PromptColor)
+typedef NSUInteger PromptTextAttribute;
+
+typedef NS_ENUM(PromptTextAttribute, PromptColor)
 {
     PromptColorBlack                = 30,
     PromptColorRed                  = 31,
@@ -28,7 +30,7 @@ typedef NS_ENUM(NSUInteger, PromptColor)
     PromptColorWhiteBackground      = 47
 };
 
-typedef NS_ENUM(NSUInteger, PromptTextStyle)
+typedef NS_ENUM(PromptTextAttribute, PromptTextStyle)
 {
     PromptTextStyleNone         = 0,
     PromptTextStyleBold         = 1,
@@ -38,6 +40,9 @@ typedef NS_ENUM(NSUInteger, PromptTextStyle)
     PromptTextStyleHide         = 8
 };
 
+
 extern NSString *const PromptTerminalEscapeString;
 extern NSString *const PromptTerminalNothingString;
-extern NSString *PromptSetColorForString(NSString *string, PromptColor color) __attribute((unused));
+extern NSString *PromptSetAttributeForString(NSString *string, PromptTextAttribute attribute);
+extern void PromptPrint(id output, ...);
+extern void PromptPrintLine(id output, ...);
