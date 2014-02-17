@@ -80,7 +80,7 @@ static NSString *PromptSetAttributeForString(NSString *string, PromptTextAttribu
     id copy = [[[self class] alloc] init];
     
     if(copy)
-        [copy setString:self.string];
+        [copy setAttrString:self.attrString];
     
     return copy;
 }
