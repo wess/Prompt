@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Quick type to give NSUInteger a pretty name
+ to match Prompt.
+ */
 typedef NSUInteger PromptTextAttribute;
 
+/**
+ Text color attribute for Prompt when printing to the terminal.
+ */
 typedef NS_ENUM(PromptTextAttribute, PromptColor)
 {
     PromptColorBlack                = 30,
@@ -30,6 +37,9 @@ typedef NS_ENUM(PromptTextAttribute, PromptColor)
     PromptColorWhiteBackground      = 47
 };
 
+/**
+ Text style for printing to the terminal.
+ */
 typedef NS_ENUM(PromptTextAttribute, PromptTextStyle)
 {
     PromptTextStyleNone         = 0,
@@ -41,8 +51,22 @@ typedef NS_ENUM(PromptTextAttribute, PromptTextStyle)
 };
 
 
-extern NSString *const PromptTerminalEscapeString;
-extern NSString *const PromptTerminalNothingString;
-extern NSString *PromptSetAttributeForString(NSString *string, PromptTextAttribute attribute);
+/**
+ Prints text (with format) to terminal.
+ 
+ @param output  String/Format to print to terminal.
+ @param ...     Values used for string replace in the output.
+ */
 extern void PromptPrint(id output, ...);
+
+/**
+ Prints text line (with format) to terminal.
+
+ @param output  String/Format to print to terminal.
+ @param ...     Values used for string replace in the output.
+ */
 extern void PromptPrintLine(id output, ...);
+
+
+
+

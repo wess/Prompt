@@ -9,15 +9,22 @@
 #import "PromptAttributedString.h"
 
 @interface PromptAttributedString()
-@property (copy, nonatomic) NSString    *string;
+@property (copy, nonatomic) NSString    *attrString;
 @end
 
 @implementation PromptAttributedString
+@synthesize string = _string;
+
+static NSString *const PromptTerminalEscapeString   = @"\e[00;%@m%@%@";
+static NSString *const PromptTerminalNothingString  = @"\e[0m";
+static NSString *PromptSetAttributeForString(NSString *string, PromptTextAttribute attribute)
 {
-    struct _stringAttribute {
-        NSRange     range;
-        NSUInteger  value;
-    };
+    if(!attribute)
+        return string;
+    
+    string = [NSString stringWithFormat:PromptTerminalEscapeString, @(attribute), string, PromptTerminalNothingString];
+    
+    return string;
 }
 
 - (instancetype)initWithString:(NSString *)string
@@ -25,9 +32,15 @@
     self = [super init];
     if (self)
     {
-        self.string = [string copy];
+        _string         = [string copy];
+        self.attrString = [string copy];
     }
     return self;
+}
+
+- (NSUInteger)length
+{
+    return _string.length;
 }
 
 - (void)addAttribute:(PromptTextAttribute)attribute range:(NSRange)range
@@ -35,14 +48,15 @@
     NSString *subString     = [self.string substringWithRange:range];
     NSString *attrString    = PromptSetAttributeForString(subString, attribute);
     
-    self.string = [self.string stringByReplacingOccurrencesOfString:subString withString:attrString];
+    self.attrString = [self.attrString stringByReplacingOccurrencesOfString:subString withString:attrString];
 }
 
 - (PromptAttributedString *)stringByAppendingString:(NSString *)string
 {
-    self.string = [self.string stringByAppendingString:string];
+    self.attrString = [self.attrString stringByAppendingString:string];
+    _string         = [_string stringByAppendingString:string];
     
-    return self;
+    return [[PromptAttributedString alloc] initWithString:self.attrString];
 }
 
 - (NSData *)dataUsingEncoding:(NSStringEncoding)encoding
@@ -54,7 +68,6 @@
 {
     return [self.string dataUsingEncoding:encoding allowLossyConversion:lossy];
 }
-
 
 - (NSString *)description
 {

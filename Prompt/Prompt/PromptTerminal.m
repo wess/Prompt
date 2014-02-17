@@ -22,19 +22,6 @@
     [valist copy]; \
 });
 
-NSString *const PromptTerminalEscapeString = @"\e[00;%@m%@%@";
-NSString *const PromptTerminalNothingString = @"\e[0m";
-
-extern NSString *PromptSetAttributeForString(NSString *string, PromptTextAttribute attribute)
-{
-    if(!attribute)
-        return string;
-
-    string = [NSString stringWithFormat:PromptTerminalEscapeString, @(attribute), string, PromptTerminalNothingString];
-    
-    return string;
-}
-
 static NSFileHandle *handle()
 {
     static NSFileHandle *handle = nil;
